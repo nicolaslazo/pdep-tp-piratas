@@ -1,4 +1,4 @@
-#Trabajo práctico piratas - implementación en JavaScript
+# Trabajo práctico piratas - implementación en JavaScript
 
 Implementación de un modelo de parcial de la materia Paradigmas de Programación de la Universidad Tecnológica Nacional FRBA.
 

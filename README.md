@@ -5,7 +5,7 @@ Implementación de un modelo de parcial de la materia Paradigmas de Programació
 La consigna del trabajo práctico y el parcial a implementar se encuentran en la raíz del repositorio.
 
 Integrantes:
-	*Delfina Constanzo ()
-	*Federico Di Chena ()
-	*Guido Landoni ()
-	*Nicolas Lazo (nicolaslazo)
+	* Delfina Constanzo ()
+	* Federico Di Chena ()
+	* Guido Landoni ()
+	* Nicolas Lazo (nicolaslazo)

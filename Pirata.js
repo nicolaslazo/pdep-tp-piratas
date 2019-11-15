@@ -1,3 +1,5 @@
+//El use strict sirve para activar un modo particular de javascript , cambia el modo de tipado, habilita ciertas palabras reservadas y demas
+
 "use strict";
 
 function Pirata(items,invitante, nivelEbriedad,cantidadMonedas) {
@@ -36,6 +38,7 @@ Pirata.prototype = {
   }
 }
 
+//Esto es propio de ECMASSCRIPT6, pero es humo, en realidad sigue funcionando por los metodos de prototipado
 class PirataEspiaDeLaCorona extends Pirata {
 	pasadoDeGrog() {
 		return false;

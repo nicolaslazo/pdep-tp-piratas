@@ -3,7 +3,7 @@ function CiudadCostera(cantidadHabitantes) {
 }
 
 CiudadCostera.prototype.esVulnerableA = function(unBarco) {
-    return  unBarco.cantidadTripulantes() >= this.cantidadHabitantes * 0.4 || unBarco.todosPasadosDeGrog()
+    return unBarco.cantidadTripulantes() >= this.cantidadHabitantes * 0.4 || unBarco.todosPasadosDeGrog()
 }
 CiudadCostera.prototype.sosSaqueablePor = function(unPirata) {
     return unPirata.nivelEbriedad() >= 50

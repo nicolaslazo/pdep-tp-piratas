@@ -5,8 +5,8 @@
 function Pirata(items,invitante, nivelEbriedad,cantidadMonedas) {
 	this.items = items,
 	this.invitante = invitante,
-  this.nivelEbriedad = nivelEbriedad,
-  this.cantidadMonedas = cantidadMonedas
+	this.nivelEbriedad = nivelEbriedad,
+	this.cantidadMonedas = cantidadMonedas
 }
 
 Pirata.prototype = {

@@ -44,7 +44,7 @@ class PirataEspiaDeLaCorona extends Pirata {
 		return false;
 	}
 	podesSaquear(unaVictima) {
-		return super.podesSaquear()(unaVictima) && this.tiene('permiso de la corona')
+		return super.podesSaquear(unaVictima) && this.tiene('permiso de la corona')
 	}
 }
 

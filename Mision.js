@@ -11,7 +11,7 @@ class BusquedaDelTesoro extends Mision {
 	}
 
 	tieneAlgunItemObligatorio(unPirata) {
-		return ['brújula', 'mapa', 'grogXD'].any(item =>  unPirata.tiene(item))
+		return ['brújula', 'mapa', 'grogXD'].some(item =>  unPirata.tiene(item))
 	}
 
 	esRealizablePor(unBarco) {
@@ -36,7 +36,7 @@ class Saqueo extends Mision {
   }
 
 	esUtil(unPirata) {
-		return unPirata.cantidadMonedas() < monedasParaSaquear.limite() && victima.sosSaqueablePor(unPirata)
+		return unPirata.cantidadMonedas() < monedasParaSaquear.limite && victima.sosSaqueablePor(unPirata)
 	}
 
 	esRealizablePor(unBarco) {

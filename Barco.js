@@ -28,7 +28,7 @@ Barco.prototype.cantidadTripulantes = function() {
 }
 
 Barco.prototype.todosPasadosDeGrog = function() {
-	return this.tripulantes.every(pasadoDeGrog);
+	return this.tripulantes.every(pirata => pirata.pasadoDeGrog);
 }
 
 Barco.prototype.puedeUnirse = function(unPirata) {
@@ -51,7 +51,7 @@ Barco.prototype.cambiarMision = function(unaMision) {
 }
 
 Barco.prototype.pirataMasEbrio = function() {
-	return tripulantes.max(tripulante => tripulante.nivelEbriedad())
+	return tripulantes.sort(tripulante => tripulante.nivelEbriedad).reverse()[0]
 }
 
 Barco.prototype.anclarEn = function(unaCiudad) {
@@ -64,7 +64,7 @@ Barco.prototype.todosTomanGrog = function() {
 }
 
 Barco.prototype.perderMasEbrioEn = function(unaCiudad) {
-	this.tripulantes.remove(this.pirataMasEbrio())
+	this.tripulantes.pop(this.pirataMasEbrio)
 	unaCiudad.sumarHabitante()
 }
 
@@ -77,15 +77,15 @@ Barco.prototype.tieneSuficienteTripulacion = function() {
 }
 
 Barco.prototype.tiene = function(unItem) {
-	return this.tripulantes.any(tripulante => tripulante.tiene(unItem))
+	return this.tripulantes.some(tripulante => tripulante.tiene(unItem))
 }
 
 Barco.prototype.cantidadTripulantesPasadosDeGrog = function() {
-	return this.tripulantesPasadosDeGrog().size()
+	return this.tripulantesPasadosDeGrog().length
 }
 
 Barco.prototype.cantidadItemsDistintosEntreTripulantesPasadosDeGrog = function() {
-	return this.tripulantesPasadosDeGrog().flatMap(tripulante => tripulante.items()).asSet().size()
+	return this.tripulantesPasadosDeGrog().flatMap(tripulante => tripulante.items.asSet().size()
 }
 
 Barco.prototype.tripulantesPasadosDeGrog = function() {
@@ -93,13 +93,13 @@ Barco.prototype.tripulantesPasadosDeGrog = function() {
 }
 
 Barco.prototype.tripulantePasadoDeGrogConMasMonedas = function() {
-	return tripulantesPasadosDeGrog().max(tripulante => tripulante.cantidadMonedas())
+	return tripulantesPasadosDeGrog().sort(tripulante => tripulante.cantidadMonedas()).reverse()[0]
 }
 
 Barco.prototype.tripulanteMasInvitador = function() {
-	return this.tripulantes.max(tripulante => tripulante.cantidadInvitadosPara(this))
+	return this.tripulantes.sort(tripulante => tripulante.cantidadInvitadosPara(this)).reverse()[0]
 }
 
 Barco.prototype.cantidadInvitadosPor = function(unTripulante) {
-	return this.tripulantes.count(tripulante => tripulante.fuisteInvitadoPor(unTripulante))
+	return this.tripulantes.filter(tripulante => tripulante.fuisteInvitadoPor(unTripulante)).length
 }

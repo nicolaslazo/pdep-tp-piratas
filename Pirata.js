@@ -11,7 +11,7 @@ function Pirata(items,invitante, nivelEbriedad,cantidadMonedas) {
 
 Pirata.prototype = {
   tiene: function(unItem) {
-    return this.items.contains(unItem)
+    return this.items.includes(unItem)
   },
   cantidadItems: function() {
     return this.items.length
@@ -34,7 +34,7 @@ Pirata.prototype = {
       	return unBarco.cantidadInvitadosPor(this)
   },
   fuisteInvitadoPor: function(unTripulante) {
-      	return invitante.equals(unTripulante)
+      	return invitante === unTripulante
   }
 }
 

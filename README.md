@@ -7,5 +7,5 @@ La consigna del trabajo práctico y el parcial a implementar se encuentran en la
 Integrantes:
 * Delfina Constanzo ()
 * Federico Di Chena (dichenafederico)
-* Guido Landoni ()
+* Guido Landoni (GuidoLandoni)
 * Nicolas Lazo (nicolaslazo)

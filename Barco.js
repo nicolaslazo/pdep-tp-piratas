@@ -85,7 +85,7 @@ Barco.prototype.cantidadTripulantesPasadosDeGrog = function() {
 }
 
 Barco.prototype.cantidadItemsDistintosEntreTripulantesPasadosDeGrog = function() {
-	return this.tripulantesPasadosDeGrog().flatMap(tripulante => tripulante.items.asSet().size()
+	return this.tripulantesPasadosDeGrog().flatMap(tripulante => tripulante.items.asSet().size())
 }
 
 Barco.prototype.tripulantesPasadosDeGrog = function() {

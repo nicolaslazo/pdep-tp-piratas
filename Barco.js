@@ -9,7 +9,7 @@ function Barco(mision,capacidad, tripulantes) {
 //Todos los mensajes que va a entender el prototipo del Barco
 
 Barco.prototype.sosSaqueablePor = function(unPirata) {
-	return unPirata.pasadoDeGrog;
+	return unPirata.pasadoDeGrog();
 }
 
 Barco.prototype.esVulnerableA = function(otroBarco) {

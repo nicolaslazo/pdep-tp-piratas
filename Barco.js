@@ -28,7 +28,7 @@ Barco.prototype.cantidadTripulantes = function() {
 }
 
 Barco.prototype.todosPasadosDeGrog = function() {
-	return this.tripulantes.every(pirata => pirata.pasadoDeGrog);
+	return this.tripulantes.every(pirata => pirata.pasadoDeGrog());
 }
 
 Barco.prototype.puedeUnirse = function(unPirata) {

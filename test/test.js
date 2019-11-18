@@ -1,23 +1,32 @@
-var barco = require('../Barco.js');
-var ciudadCostera = require('../CiudadCostera.js');
-var mision = require('../Mision.js');
-var pirata = require('../Pirata.js');
-
 var assert = require('chai').assert;
+var fs = require('fs');
+var vm = require('vm');
 
-var ciudadChica = ciudadCostera.CiudadCostera(10);
-var ciudadGrande = ciudadCostera.CiudadCostera(1000000000000);
+var ciudadCosteraCode = fs.readFileSync('../CiudadCostera.js');
+vm.runInThisContext(ciudadCosteraCode);
 
-var misionBusquedaDelTesoro = mision.BusquedaDelTesoro();
-var misionConvertirseEnLeyendaConOro = mision.ConvertirseEnLeyenda('oro');
-var misionSaqueoACiudadChica = mision.Saqueo(ciudadChica);
-var misionSaqueoACiudadGrande = mision.Saqueo(ciudadGrande);
+var misionCode = fs.readFileSync('../Mision.js');
+vm.runInThisContext(misionCode);
 
-var pirataRicoBorracho = pirata.Pirata(['brújula', 'mapa', 'grogXD', 'oro', 'itemGenerico', 'itemGenerico', 'itemGenerico', 'itemGenerico', 'itemGenerico', 'itemGenerico', 'itemGenerico'], null, 1000, 10000);
-var pirataPobreSobrio = pirata.Pirata(['mapa', 'llave del cofre'], pirataRicoBorracho, 0, 0);
-var pirataEspia = pirata.PirataEspiaDeLaCorona(['mapa', 'llave del cofre', 'permiso de la corona'], pirataRicoBorracho, 0, 0);
+var pirataCode = fs.readFileSync('../Pirata.js');
+vm.runInThisContext(pirataCode);
 
-var barcoGrande = barco.Barco(misionBusquedaDelTesoro, 1000, [pirataRicoBorracho, pirataPobreSobrio, pirataEspia]);
+var barcoCode = fs.readFileSync('../Barco.js');
+vm.runInThisContext(barcoCode);
+
+var ciudadChica = new CiudadCostera(10);
+var ciudadGrande = new CiudadCostera(1000000000000);
+
+var misionBusquedaDelTesoro = new BusquedaDelTesoro();
+var misionConvertirseEnLeyendaConOro = new ConvertirseEnLeyenda('oro');
+var misionSaqueoACiudadChica = new Saqueo(ciudadChica);
+var misionSaqueoACiudadGrande = new Saqueo(ciudadGrande);
+
+var pirataRicoBorracho = new Pirata(['brújula', 'mapa', 'grogXD', 'oro', 'itemGenerico', 'itemGenerico', 'itemGenerico', 'itemGenerico', 'itemGenerico', 'itemGenerico', 'itemGenerico'], null, 1000, 10000);
+var pirataPobreSobrio = new Pirata(['mapa', 'llave del cofre'], pirataRicoBorracho, 0, 0);
+var pirataEspia = new PirataEspiaDeLaCorona(['mapa', 'llave del cofre', 'permiso de la corona'], pirataRicoBorracho, 0, 0);
+
+var barcoGrande = new Barco(misionBusquedaDelTesoro, 1000, [pirataRicoBorracho, pirataPobreSobrio, pirataEspia]);
 
 describe('Tests de tp', function() {
 	it('pirataRicoBorracho tiene mapa', function() {

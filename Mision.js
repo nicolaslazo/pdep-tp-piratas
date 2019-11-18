@@ -1,10 +1,15 @@
 class Mision {
+	constructor(){}
+
 	esRealizablePor(unBarco) {
 		return unBarco.tieneSuficienteTripulacion()
 	}
 }
 
 class BusquedaDelTesoro extends Mision {
+	constructor() {
+		super();
+  }
 
 	esUtil(unPirata) {
 		return tieneAlgunItemObligatorio(unPirata) && unPirata.cantidadMonedas() <= 5
@@ -22,6 +27,7 @@ class BusquedaDelTesoro extends Mision {
 
 class ConvertirseEnLeyenda extends Mision {
   constructor(itemObligatorio) {
+		super();
     this.itemObligatorio = itemObligatorio
   }
 	esUtil(unPirata) {
@@ -32,6 +38,7 @@ class ConvertirseEnLeyenda extends Mision {
 
 class Saqueo extends Mision {
   constructor(unaVictima) {
+		super();
     this.unaVictima = unaVictima
   }
 

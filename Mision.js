@@ -26,12 +26,13 @@ class BusquedaDelTesoro extends Mision {
 }
 
 class ConvertirseEnLeyenda extends Mision {
-  constructor(itemObligatorio) {
+	constructor(itemObligatorio) {
 		super();
-    this.itemObligatorio = itemObligatorio
-  }
+		this.itemObligatorio = itemObligatorio;
+	}
+
 	esUtil(unPirata) {
-		return unPirata.cantidadItems() >= 10 && unPirata.tiene(this.itemObligatorio)
+		return unPirata.cantidadItems() >= 10 && unPirata.tiene(this.itemObligatorio);
 	}
 
 }

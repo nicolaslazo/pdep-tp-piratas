@@ -46,8 +46,8 @@ Barco.prototype.agregar = function(unTripulante) {
 }
 
 Barco.prototype.cambiarMision = function(unaMision) {
-	this.tripulantes = tripulantes.filter(tripulante => unaMision.esUtil(tripulante));
 	this.mision = unaMision;
+	this.tripulantes = tripulantes.filter(tripulante => this.mision.esUtil(tripulante));
 }
 
 Barco.prototype.pirataMasEbrio = function() {

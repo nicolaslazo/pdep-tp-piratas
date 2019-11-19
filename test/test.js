@@ -37,6 +37,10 @@ describe('Tests de tp', function() {
 		assert.isTrue(pirataRicoBorracho.pasadoDeGrog(), 'está borracho');
 	})
 
+	it('pirataPobreSobrio no esta pasado de Grog', function() {
+		assert.isFalse(pirataPobreSobrio.pasadoDeGrog(), 'no está borracho');
+	})
+
 	it('pirataPobreSobrio no tiene dinero para tomar grog', function() {
 		assert.throws(pirataPobreSobrio.tomarGrog(), 'no tiene suficiente dinero');
 	})

@@ -32,26 +32,26 @@ Barco.prototype.todosPasadosDeGrog = function() {
 }
 
 Barco.prototype.puedeUnirse = function(unPirata) {
-	return this.hayLugar() && mision.esUtil(unPirata);
+	return this.hayLugar() && this.mision.esUtil(unPirata);
 }
 
 Barco.prototype.hayLugar = function() {
-	return this.cantidadTripulantes() < capacidad;
+	return this.cantidadTripulantes() < this.capacidad;
 }
 
 Barco.prototype.agregar = function(unTripulante) {
 	if (this.puedeUnirse(unTripulante)) {
-		tripulantes.push(unTripulante);
+		this.tripulantes.push(unTripulante);
 	}
 }
 
 Barco.prototype.cambiarMision = function(unaMision) {
 	this.mision = unaMision;
-	this.tripulantes = tripulantes.filter(tripulante => this.mision.esUtil(tripulante));
+	this.tripulantes = this.tripulantes.filter(tripulante => this.mision.esUtil(tripulante));
 }
 
 Barco.prototype.pirataMasEbrio = function() {
-	return tripulantes.sort(tripulante => tripulante.nivelEbriedad).reverse()[0];
+	return this.tripulantes.sort(tripulante => tripulante.nivelEbriedad).reverse()[0];
 }
 
 Barco.prototype.anclarEn = function(unaCiudad) {
@@ -73,7 +73,7 @@ Barco.prototype.esTemible = function() {
 }
 
 Barco.prototype.tieneSuficienteTripulacion = function() {
-	return this.cantidadTripulantes() >= capacidad * 0.9;
+	return this.cantidadTripulantes() >= this.capacidad * 0.9;
 }
 
 Barco.prototype.tiene = function(unItem) {
@@ -93,7 +93,7 @@ Barco.prototype.tripulantesPasadosDeGrog = function() {
 }
 
 Barco.prototype.tripulantePasadoDeGrogConMasMonedas = function() {
-	return tripulantesPasadosDeGrog().sort(tripulante => tripulante.cantidadMonedas()).reverse()[0];
+	return this.tripulantesPasadosDeGrog().sort(tripulante => tripulante.cantidadMonedas()).reverse()[0];
 }
 
 Barco.prototype.tripulanteMasInvitador = function() {

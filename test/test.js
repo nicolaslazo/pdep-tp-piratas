@@ -42,7 +42,7 @@ describe('Tests de tp', function() {
 	})
 
 	it('pirataPobreSobrio no tiene dinero para tomar grog', function() {
-		assert.throws(pirataPobreSobrio.tomarGrog(), 'no tiene suficiente dinero');
+		assert.throws(pirataPobreSobrio.tomarGrog(), /no tiene suficiente dinero/);
 	})
 
 	it('barcoGrande puede ser saqueado por pirataRicoBorracho', function() {
@@ -55,6 +55,6 @@ describe('Tests de tp', function() {
 
 	it('al cambiar la mision de barcoGrande a misionConvertirseEnLeyendaConOro la unica tripulacion que queda es pirataRicoBorracho', function() {
 		barcoGrande.cambiarMision(misionConvertirseEnLeyendaConOro);
-		assert.equals(barcoGrande.tripulantes, [pirataRicoBorracho], 'queda pirataRicoBorracho solo');
+		assert.equal(barcoGrande.tripulantes, [pirataRicoBorracho], 'queda pirataRicoBorracho solo');
 	})
 });

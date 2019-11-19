@@ -12,7 +12,7 @@ class BusquedaDelTesoro extends Mision {
   }
 
 	esUtil(unPirata) {
-		return tieneAlgunItemObligatorio(unPirata) && unPirata.cantidadMonedas() <= 5
+		return self.tieneAlgunItemObligatorio(unPirata) && unPirata.cantidadMonedas() <= 5
 	}
 
 	tieneAlgunItemObligatorio(unPirata) {
@@ -44,11 +44,11 @@ class Saqueo extends Mision {
   }
 
 	esUtil(unPirata) {
-		return unPirata.cantidadMonedas() < monedasParaSaquear.limite && victima.sosSaqueablePor(unPirata)
+		return unPirata.cantidadMonedas() < monedasParaSaquear.limite && self.victima.sosSaqueablePor(unPirata)
 	}
 
 	esRealizablePor(unBarco) {
-		return super.esRealizablePor(unBarco) && victima.esVulnerableA(unBarco)
+		return super.esRealizablePor(unBarco) && self.victima.esVulnerableA(unBarco)
 	}
 
 }

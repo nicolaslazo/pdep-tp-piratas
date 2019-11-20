@@ -50,3 +50,8 @@ class PirataEspiaDeLaCorona extends Pirata {
 		return super.podesSaquear(unaVictima) && this.tiene('permiso de la corona')
 	}
 }
+
+module.exports = {
+	 Pirata:Pirata,
+	 PirataEspiaDeLaCorona: PirataEspiaDeLaCorona
+}

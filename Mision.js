@@ -44,7 +44,7 @@ class Saqueo extends Mision {
   }
 
 	esUtil(unPirata) {
-		return unPirata.cantidadMonedas() < monedasParaSaquear.limite && self.victima.sosSaqueablePor(unPirata)
+		return unPirata.cantidadMonedas < monedasParaSaquear.limite && self.victima.sosSaqueablePor(unPirata)
 	}
 
 	esRealizablePor(unBarco) {
@@ -55,4 +55,11 @@ class Saqueo extends Mision {
 
 var monedasParaSaquear = {
 	"limite": 0
+}
+
+module.exports = {
+	Mision:Mision,
+  BusquedaDelTesoro: BusquedaDelTesoro,
+  ConvertirseEnLeyenda: ConvertirseEnLeyenda,
+	Saqueo:Saqueo
 }

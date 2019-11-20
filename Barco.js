@@ -17,7 +17,7 @@ Barco.prototype.esVulnerableA = function(otroBarco) {
 }
 
 Barco.prototype.sosSaqueablePor = function(unPirata) {
-	return unPirata.pasadoDeGrog;
+	return unPirata.pasadoDeGrog();
 }
 
 Barco.prototype.esVulnerableA = function(otroBarco) {
@@ -47,7 +47,7 @@ Barco.prototype.agregar = function(unTripulante) {
 
 Barco.prototype.cambiarMision = function(unaMision) {
 	this.mision = unaMision;
-	this.tripulantes = this.tripulantes.filter(tripulante => this.mision.esUtil(tripulante));
+	this.tripulantes = this.tripulantes.filter(tripulante => unaMision.esUtil(tripulante));
 }
 
 Barco.prototype.pirataMasEbrio = function() {
@@ -103,3 +103,5 @@ Barco.prototype.tripulanteMasInvitador = function() {
 Barco.prototype.cantidadInvitadosPor = function(unTripulante) {
 	return this.tripulantes.filter(tripulante => tripulante.fuisteInvitadoPor(unTripulante)).length;
 }
+
+module.exports = Barco;

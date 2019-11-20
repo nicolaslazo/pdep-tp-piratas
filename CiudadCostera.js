@@ -11,3 +11,5 @@ CiudadCostera.prototype.sosSaqueablePor = function(unPirata) {
 CiudadCostera.prototype.sumarHabitante = function(unosHabitantes) {
     this.cantidadHabitantes = this.cantidadHabitantes + unosHabitantes;
 }
+
+module.exports = CiudadCostera;

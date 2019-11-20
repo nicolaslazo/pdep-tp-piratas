@@ -42,7 +42,7 @@ describe('Tests de tp', function() {
 	})
 
 	it('pirataPobreSobrio no tiene dinero para tomar grog', function() {
-		assert.throws(pirataPobreSobrio.tomarGrog(), /no tiene suficiente dinero/);
+		assert.throws(pirataPobreSobrio.prototype.tomarGrog, 'no tiene suficiente dinero');
 	})
 
 	it('barcoGrande puede ser saqueado por pirataRicoBorracho', function() {
@@ -57,4 +57,10 @@ describe('Tests de tp', function() {
 		barcoGrande.cambiarMision(misionConvertirseEnLeyendaConOro);
 		assert.equal(barcoGrande.tripulantes, [pirataRicoBorracho], 'queda pirataRicoBorracho solo');
 	})
+
+	it('pirataEspia fue invitado por pirataRicoBorracho', function() {
+		assert.equal(pirataEspia.fuisteInvitadoPor(pirataRicoBorracho), pirataRicoBorracho)
+	})
+
+
 });

@@ -20,8 +20,8 @@ Pirata.prototype = {
 		return this.nivelEbriedad >= 90
 	},
 	tomarGrog: function() {
-		this.nivelEbriedad += 5
 		this.gastarMoneda()
+		this.nivelEbriedad += 5
 	},
 	gastarMoneda: function() {
 		this.validarGastarMonedas()
